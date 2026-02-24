@@ -4,6 +4,8 @@ Welcome! 👋 This project is a modern web application to explore the **Star War
 It consumes the **Star Wars API (SWAPI)** and includes a simple AI agent for advanced queries.  
 The main focus is on UI design and simple, efficient API consumption.
 
+![](https://raw.githubusercontent.com/Fernack/swapi-explorer/main/demo.gif)
+
 ---
 
 ## 🎯 Objective
@@ -85,6 +87,7 @@ POST /api/chat
   "message": "How many characters are from Tatooine?",
   "context": "star-wars-universe"
 }
+```
 
 ## 🐳 Running the App
 
@@ -96,13 +99,14 @@ Build and run the container:
 ```bash
 docker build -t swapi-explorer .
 docker run -p 3000:3000 swapi-explorer
-
+```
 
 ### 2️⃣ Using Docker Compose
 Build and start all services:
 
 ```bash
 docker-compose up --build
+```
 
 ### 3️⃣ Running Locally
 Clone the repo, install dependencies, and start the app:
@@ -112,3 +116,4 @@ git clone https://github.com/your-username/swapi-explorer.git
 cd swapi-explorer
 npm install
 npm run dev
+```
