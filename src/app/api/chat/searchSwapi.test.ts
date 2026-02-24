@@ -6,7 +6,7 @@ describe('searchSwapi', () => {
   const originalEnv = process.env;
 
   beforeEach(() => {
-    process.env.BASE_URL = 'https://swapi.dev/api';
+    process.env.NEXT_PUBLIC_SWAPI_BASE_URL = 'https://swapi.dev/api';
   });
 
   afterEach(() => {

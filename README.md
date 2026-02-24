@@ -85,3 +85,30 @@ POST /api/chat
   "message": "How many characters are from Tatooine?",
   "context": "star-wars-universe"
 }
+
+## 🐳 Running the App
+
+You can run the application in several ways:
+
+### 1️⃣ Using Docker
+Build and run the container:
+
+```bash
+docker build -t swapi-explorer .
+docker run -p 3000:3000 swapi-explorer
+
+
+### 2️⃣ Using Docker Compose
+Build and start all services:
+
+```bash
+docker-compose up --build
+
+### 3️⃣ Running Locally
+Clone the repo, install dependencies, and start the app:
+
+```bash
+git clone https://github.com/your-username/swapi-explorer.git
+cd swapi-explorer
+npm install
+npm run dev

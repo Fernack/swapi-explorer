@@ -1,7 +1,7 @@
 import { SwapiListResponse, Person, Planet, Starship, Vehicle, Film, Species } from '@/types/swapi';
 
 async function fetchFromSwapi<T>(endpoint: string): Promise<T> {
-    const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SWAPI_BASE_URL}${endpoint}`, {
         next: { revalidate: 3600 }, 
     });
     if (!res.ok) {

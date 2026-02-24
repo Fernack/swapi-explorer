@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 import { searchSwapi } from "./searchSwapi";
 import { SYSTEM_PROMPT } from "./systemPrompt";
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-
 export async function callOpenAIWithTools(
   message: string,
   history: { role: "user" | "assistant" | "system"; content: string }[]
 ) {
   try {
+    const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [

@@ -1,15 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { callOpenAIWithTools } from './openai';
+import { searchSwapi } from './searchSwapi';
 
-// Hoisted module mocks
-var chatCompletionsCreate: ReturnType<typeof vi.fn>;
+const chatCompletionsCreate = vi.fn();
+const searchSwapiMock = vi.mocked(searchSwapi);
 
 vi.mock('openai', () => {
   return {
     default: class {
       chat: any;
-      // Accept any constructor args but ignore them
       constructor(..._args: any[]) {
-        chatCompletionsCreate = vi.fn();
         this.chat = {
           completions: {
             create: chatCompletionsCreate,
@@ -23,11 +23,6 @@ vi.mock('openai', () => {
 vi.mock('./searchSwapi', () => ({
   searchSwapi: vi.fn(),
 }));
-
-import { callOpenAIWithTools } from './openai';
-import { searchSwapi } from './searchSwapi';
-
-const searchSwapiMock = vi.mocked(searchSwapi);
 
 describe('callOpenAIWithTools', () => {
   beforeEach(() => {

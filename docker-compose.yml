@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  swapi-app:
+    container_name: swapi-next-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IS_DOCKER: "true"
+        NEXT_PUBLIC_SWAPI_BASE_URL: ${NEXT_PUBLIC_SWAPI_BASE_URL}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

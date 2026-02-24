@@ -19,7 +19,7 @@ export async function GET(
     if (search) queryParams.append('search', search);
 
     try {
-        const res = await fetch(`${process.env.BASE_URL}/${entity}/?${queryParams}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SWAPI_BASE_URL}/${entity}/?${queryParams}`, {
             next: { revalidate: 3600 },
         });
 

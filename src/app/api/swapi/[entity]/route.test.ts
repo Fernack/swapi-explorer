@@ -6,7 +6,7 @@ const originalEnv = process.env;
 describe('GET /api/swapi/[entity]', () => {
   beforeEach(() => {
     vi.resetModules();
-    process.env = { ...originalEnv, BASE_URL: 'https://swapi.dev/api' };
+    process.env = { ...originalEnv, NEXT_PUBLIC_SWAPI_BASE_URL: 'https://swapi.dev/api' };
   });
 
   async function get(entity: string, searchParams?: string) {
